@@ -3,12 +3,13 @@ import Tag from './components/Tag'
 import Navbar from './components/Navbar'
 import Producto from './components/Producto';
 import ItemListContainer from './components/ItemListContainer';
-
+import CartWidget from './components/CartWidget';
 
 
 function App() {
   return (
     <>
+    <CartWidget/>
     <ItemListContainer />
     <Navbar />
     <Producto 
