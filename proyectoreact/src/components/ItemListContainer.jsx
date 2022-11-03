@@ -1,5 +1,5 @@
 const ItemListContainer = () => {
-    return "Bienvenido a Sólo Fútbol"
+    return "Bienvenido a Futbolópolis"
 }
 
 export default ItemListContainer;
