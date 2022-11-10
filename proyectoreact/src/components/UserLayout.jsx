@@ -1,8 +1,10 @@
-import Navbar from "./Navbar";
+import NavBar from './NavBar';
 
 export const UserLayout = ({ children }) => {
-    return <div>
-        <Navbar />
-        { children }
+    return (
+        <div>
+            <NavBar greeting={`Futbolópolis`}/>
+            { children }
         </div>
+    )
 }

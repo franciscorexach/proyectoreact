@@ -1,22 +1,56 @@
-import CartWidget from "./CartWidget"
-import {Link} from "react-router-dom"
+import { Container, Nav, Navbar } from 'react-bootstrap';
 
-const Navbar = ({header}) => {
-    return <header>
-        <h1>Futbolópolis</h1>
-        <ul>
-            <li>Inicio</li>
-            <Link to={"category/camisetas"}
->Camisetas</Link>
-<Link to={"category/camisetas"}
->Pantalones</Link><Link to={"category/pantalones"}
->Botines</Link><Link to={"category/botines"}
->Pelotas</Link><Link to={"category/pelotas"}
->Contacto</Link>
-        </ul>
-        <CartWidget/>
-    </header>
-    
+import CartWidget from "./CartWidget"
+import { NavLink } from "react-router-dom"
+
+const NavBar = ({ greeting }) => {
+
+    return (
+        <div>
+            <Navbar bg="dark" variant="dark">
+                <Container fluid >
+                    <Navbar.Brand>
+                        <NavLink to={`/`} className="text-decoration-none text-light">
+                            { greeting }
+                        </NavLink>
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse>
+                        <Nav>
+                            <Nav.Link>
+                                <NavLink to={`/category/camisetas`} className="text-decoration-none text-light">
+                                    Camisetas
+                                </NavLink>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <NavLink to={`/category/pantalones`} className="text-decoration-none text-light">
+                                    Pantalones
+                                </NavLink>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <NavLink to={`/category/botines`} className="text-decoration-none text-light">
+                                    Botines
+                                </NavLink>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <NavLink to={`/category/pelotas`} className="text-decoration-none text-light">
+                                    Pelotas
+                                </NavLink>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <NavLink to={"/contacto"} className="text-decoration-none text-light">
+                                    Contacto
+                                </NavLink>
+                            </Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                    <Nav className="text-decoration-none text-light">
+                        <CartWidget />
+                    </Nav>
+                </Container>
+            </Navbar>
+        </div>
+    )
 }
 
-export default Navbar
+export default NavBar;
